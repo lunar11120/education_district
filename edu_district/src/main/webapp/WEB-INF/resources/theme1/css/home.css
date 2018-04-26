@@ -1,0 +1,108 @@
+h1{
+	color:red;
+}
+
+#sub_topic{
+	color:blue;
+	font-size: 30px;
+	margin-top: 15px; margin-right: auto; margin-bottom: 0px; margin-left: auto;
+}
+
+body{
+	background-color:PaleTurquoise ; 
+}
+
+
+
+#section1{
+	width: 1000px;
+	height: 600px;
+	background-color:white;
+	border: 1px solid black;
+	text-align: left;
+	margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto;
+
+}
+#section2_District{
+	width: 1000px;
+	height: 930px;
+	background-color:white;
+	border: 1px solid black;
+	text-align: left;
+	margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto;	
+}
+#section3_addschool{
+	width: 1000px;
+	height: 700px;
+	background-color:white;
+	border: 1px solid black;
+	text-align: left;
+	margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto;		
+}
+
+#system_topic{
+	font-size: 20px;
+	font-style: normal;
+	fonr-color: #0B9E9A;
+	margin-top: 6px;
+}
+
+.container
+{
+	width: 800px;
+
+}
+
+.link_system{
+	margin-top: 0px; margin-right: 50px; margin-bottom: 0px; margin-left: auto;
+}
+
+#ar1{
+	float:left;
+    margin-left: 115px;
+    width: 260px;
+	font-size: 13px;
+	font-style: normal;
+	line-height:1;
+}
+
+#ar2{
+	float:right;
+    margin-right: 25px;
+    width: 510px;
+	font-size: 13px;
+	font-style: normal;
+	line-height:1;
+}
+#section_footer{
+	width:100%;
+	background-color:lightgrey;	
+}
+
+#buttom1{
+	text-align: center;
+	font-size: 13px;
+	margin-top:8;
+	line-height:1;
+}
+#newstopic{
+	margin-top: 25px;
+}
+#newstopic_button{
+	margin-top: 5px; margin-right: 0px; margin-bottom: 30px; margin-left:10px;
+	font-size: 13px;
+	float:right;
+}
+.list-group-item{
+	font-size: 13px;
+}
+
+
+ul {
+  list-style-type: none;
+}
+#link_review,td{
+  padding: 10px;
+}
+
+
