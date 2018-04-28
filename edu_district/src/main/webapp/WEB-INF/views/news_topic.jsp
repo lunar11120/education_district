@@ -26,8 +26,8 @@
 	
 		<header id="header1">
 			<div class="img_logo">
-				<spring:url value="/resources/images/banner_logo_p1.jpg" var="image_logo1" />	
-				<img src="${image_logo1 }" />
+				<spring:url value="/resources/images/banner_logo_p1.jpg" var="image_logo2" />	
+				<img src="${image_logo2 }" />
 			</div>
 		
 			<div class="container">
@@ -35,41 +35,27 @@
 			</div>
 	    </header>	
 	
-	<div class="container">
-		<spring:url value="/school/list_primaryschool" var="list_primaryschool"/>
-	    <a class="btn btn-primary" href="${list_primaryschool }">   
-      	    เขตพื้นที่การศึกษาประถมศึกษา »
-        </a>  
-        <spring:url value="/school/list_highschool" var="list_highschool"/>     
-        <a class="btn btn-primary" href="${list_highschool }">
- 	             เขตพื้นที่การศึกษามัธยมศึกษา »
-        </a>
-     </div>	    
-	
-	
-	<div class="container" id="newstopic">
-		  <a href="#" class="list-group-item list-group-item-success">
-		   <label> ข่าวกลุ่มงานสารสนเทศ สำนักนโยบายและแผนฯ</label>
-		  </a>
-		 <c:forEach items="${news_objects }" var="news_objects">
-  			<li class="list-group-item">News Topic :
-  			<spring:url value="/newstopic/${news_objects.nid}" var="topicId" />
-  			<a href="${topicId }"><span>${news_objects.topic }</span></a> วันที่ <span>${news_objects.topicDate }</span></li>
-		</c:forEach>
+	 <div class="container">
+		<!--  Index >> add_school_page -->
+		<spring:url value="/" var="home"/>
+		<spring:url value="/school/add" var="addschool"/>
+	    <a href="${home }">หน้าแรก</a>   >>    ข่าวกลุ่มงานสารสนเทศ สำนักนโยบายและแผนฯ   <br /><br />  	     
+     </div>
+	    
+	<div class="container">		
+		<h2>News</h2>
+		<ul class="list-group">
+			<li class="list-group-item"><label>หัวข้อข่าว :</label><span>${news_topic.topic }</span></li>
+  			<li class="list-group-item"><label>วันที่:</label><span>${news_topic.topicDate }</span></li>
+  			<li class="list-group-item"><label>เนื้อหาข่าว :</label><span>${news_topic.newsDetail }</span></li>
+		</ul>		
 	</div>
+	
+	<div class="container">			    
+	        <spring:url value="/" var="home"/>
+		    <a href="${home}" >กลับไปหน้าแรก</a>	 	
+	</div>	
 
-		
-	<div class="container">
-		<article id="newstopic_button">
-			<a href="#">ดูข่าวทั้งหมด</a>
-		</article>
-	</div>
-	
-	<div id="section_footer">		
-		<jsp:include page="../views/fragments/obec_department.jsp"></jsp:include>	
-	</div>		
-	
-	
 	
 	</section><!-- End section 1 -->
 	
@@ -79,7 +65,6 @@
 	</div>	
 
 	
-
 	
 </body>
 </html>

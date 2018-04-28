@@ -25,4 +25,16 @@ public class DistrictServiceImpl implements DistrictService {
 		return districtRepository.load_all_district();
 	}
 
+	public District find_by_id(int id) {
+		return districtRepository.getByDistrictId(id);
+	}
+
+	public List<District> findAll_dsitrictHighschool() {
+		return districtRepository.load_all_dsitrictHighschool();
+	}
+
+	public List<District> findAll_dsitrictPrimaryschool() {
+		return districtRepository.load_all_dsitrictPrimaryschool();
+	}
+
 }

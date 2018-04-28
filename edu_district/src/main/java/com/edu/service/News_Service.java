@@ -5,4 +5,5 @@ import com.edu.model.NewsTopic;
 
 public interface News_Service {
 	List<NewsTopic> findAllNews();
+	NewsTopic findByID(int id);
 }

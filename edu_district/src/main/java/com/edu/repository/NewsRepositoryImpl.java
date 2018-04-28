@@ -31,5 +31,15 @@ public class NewsRepositoryImpl implements NewsRepository {
 		return query.getResultList();
 		
 	}
+	
+	@Transactional
+	public NewsTopic getNewsTopicbyID(int id) {
+
+		NewsTopic news_object2 = new NewsTopic();
+		news_object2 = em.getReference(NewsTopic.class, id);
+		System.out.println("checknew object2"+news_object2.toString());
+		return news_object2;
+	}
+
 
 }

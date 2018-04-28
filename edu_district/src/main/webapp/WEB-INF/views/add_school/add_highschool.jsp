@@ -67,6 +67,14 @@
 					<label for="school-type">ประเภท</label>
 					<form:select path="schoolType" cssClass="selectpicker" items="${typeOptions_hs}"></form:select>
 				</div>
+								
+				<div class="form-group">
+					<label for="school-type">เขตพื้นที่การศึกษา</label>				
+					<form:select path="district_id_number">
+					    <form:option value="0" label="เลือกเขตพื้นที่การศึกษา" />
+					    <form:options items="${districtListMap}" cssClass="selectpicker" />
+					</form:select>								
+				</div>	
 				
 				<div class="form-group">
 					<label for="school-director">ผู้บริหาร</label>
@@ -83,10 +91,10 @@
 					<form:input id="school-url" cssClass="form-control" path="schoolUrl"/>
 				</div>
 			
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default">Submit</button> 
 	
 			</form:form>		
-		</div>
+		</div> <br />
 	</div>
 	
 	</section>

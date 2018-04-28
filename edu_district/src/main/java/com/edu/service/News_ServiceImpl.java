@@ -18,6 +18,11 @@ public class News_ServiceImpl implements News_Service {
 	public List<NewsTopic> findAllNews() {
 		return newsRepository.find_all_News();
 	}
+
+	public NewsTopic findByID(int id) {
+		// TODO Auto-generated method stub
+		return newsRepository.getNewsTopicbyID(id);
+	}
 	
 
 

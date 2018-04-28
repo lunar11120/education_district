@@ -30,14 +30,35 @@ public class DistrictRepositoryImpl implements DistrictRepository {
 		}else {
 			System.out.println("Entity manager Merge:District");
 			district = em.merge(district);
+			em.close();
 		}
 		return null;		
 	}
-
+	
+	@Transactional
 	public List<District> load_all_district() {
 		System.out.println("District Repository | load_all_district | Start run Query");
 		
 		TypedQuery<District> query = em.createNamedQuery(District.FIND_ALL_DISTRICT, District.class);	
+		return query.getResultList();
+	}
+	
+	@Transactional
+	public District getByDistrictId(int id) {
+		return em.getReference(District.class, id);
+	}
+
+	public List<District> load_all_dsitrictHighschool() {
+		System.out.println("District Repository | load_all_districtHighschool | Start run Query");
+		
+		TypedQuery<District> query = em.createNamedQuery(District.FIND_ALL_HIGHSCHOOL, District.class);	
+		return query.getResultList();
+	}
+
+	public List<District> load_all_dsitrictPrimaryschool() {
+		System.out.println("District Repository | load_all_districtHighschool | Start run Query");
+		
+		TypedQuery<District> query = em.createNamedQuery(District.FIND_ALL_PRIMARYSCHOOL, District.class);	
 		return query.getResultList();
 	}
 

@@ -16,12 +16,14 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = District.FIND_ALL_DISTRICT , query =  "SELECT g FROM District g"),
-	@NamedQuery(name = District.FIND_ALL_District_V2 , query = "SELECT g FROM District g"  )	
+	@NamedQuery(name = District.FIND_ALL_HIGHSCHOOL , query = "SELECT g FROM District g where g.isDistrictHighschool=True"  ),
+	@NamedQuery(name = District.FIND_ALL_PRIMARYSCHOOL , query = "SELECT g FROM District g where g.isDistrictHighschool=False"  )	
 })
 public class District {
 	
 	public static final String FIND_ALL_DISTRICT = "findAllDistrict";
-	public static final String FIND_ALL_District_V2 = "findAll_version2";	
+	public static final String FIND_ALL_HIGHSCHOOL = "findAll_highSchool";	
+	public static final String FIND_ALL_PRIMARYSCHOOL = "findAll_primarySchool";	
 	
 	@Id
 	@GeneratedValue
@@ -33,7 +35,7 @@ public class District {
 	private String districtAddress;
 	
     @Column
-    @ElementCollection(targetClass=String.class)
+    @ElementCollection(targetClass=String.class,fetch=FetchType.EAGER)
 	private List<String> telePhone;
 	private String fax;
 	

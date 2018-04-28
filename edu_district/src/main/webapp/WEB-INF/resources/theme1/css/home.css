@@ -33,11 +33,10 @@ body{
 }
 #section3_addschool{
 	width: 1000px;
-	height: 700px;
 	background-color:white;
 	border: 1px solid black;
 	text-align: left;
-	margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto;		
+	margin-top: 0px; margin-right: auto; margin-bottom: 18px; margin-left: auto;		
 }
 
 #system_topic{

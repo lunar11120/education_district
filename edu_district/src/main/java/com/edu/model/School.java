@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Transient;
 
 @Entity
 @NamedQueries({
@@ -28,13 +29,16 @@ public class School {
 	private String schoolUrl;
 	private int teacher_and_employee;
 	
+	@Transient
+	private int district_id_number;
+	
 	//District Type [primary_school = 0] [high_school = 1]
 	private Boolean districtType;
 	
 	@ManyToOne
 	@JoinColumn(name="district_id")
 	private District district;
-
+	
 		
 	public Boolean getDistrictType() {
 		return districtType;
@@ -43,6 +47,16 @@ public class School {
 
 	public void setDistrictType(Boolean districtType) {
 		this.districtType = districtType;
+	}
+
+
+	public int getDistrict_id_number() {
+		return district_id_number;
+	}
+
+
+	public void setDistrict_id_number(int district_id_number) {
+		this.district_id_number = district_id_number;
 	}
 
 
@@ -129,8 +143,16 @@ public class School {
 
 	@Override
 	public String toString() {
-		return "School [id=" + id + ", schoolID=" + schoolID + ", schoolName=" + schoolName + "]";
+		return "School [id=" + id + ", schoolID=" + schoolID + ", schoolName=" + schoolName + ", schoolType="
+				+ schoolType + ", teacher_and_employee=" + teacher_and_employee + ", district_id_number="
+				+ district_id_number +  "]";
 	}
+
+
+	
+
+
+
 
 	
 	

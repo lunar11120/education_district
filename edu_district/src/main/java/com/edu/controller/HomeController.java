@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -21,13 +22,12 @@ public class HomeController {
 	@RequestMapping(value="/")
 	public String goHome(Model model) {
 		
-		
 		List<NewsTopic> news_objects = news_Object_Service.findAllNews();
-		
-		System.out.println("News List: "+news_objects);
 		model.addAttribute("news_objects",news_objects);
 		return "home";
 	}
+	
+
 
 	
 	@RequestMapping("/about")

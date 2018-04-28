@@ -14,36 +14,61 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	<!-- add this for CSS in resources folder -->
-	<spring:url value="/resources/theme1/css/home.css" var="mainCss" />	
-	<link href="${mainCss}" rel="stylesheet" />
+	<spring:url value="/resources/theme1/css/list_school.css" var="listCss" />	
+	<link href="${listCss }" rel="stylesheet" />
 </head>
 <body>
 		<jsp:include page="../views/fragments/header.jsp"></jsp:include>
 	
-	<section id="section1"><!-- section 1 -->
+	<section id="sectionlist"><!-- section list school -->
 	
-	<div class="container">
+	<div class="sec_lst">
 		
-		<h2>High School List</h2>
-		<table class="table table-hover">
-			<tbody>
-				<tr>
-					<th>School ID</th> <th>School name</th> <th>ประเภทโรงเรียน</th>
-				</tr>
-				<c:forEach items="${schools }" var="schools">
-					<tr>
-						<!-- List of HighSchool-->
-						<td>${schools.id}</td>						
-						<td>${schools.schoolName }</td>
-						<td>${schools.schoolType }</td>
-					</tr>	
-				</c:forEach>
-			</tbody>
-		</table>		
-	</div>	
+		<header id="header1">
+			<div class="img_logo">
+				<spring:url value="/resources/images/banner_logo_p2.jpg" var="image_logo2" />	
+				<img src="${image_logo2 }" />
+			</div><br />
+		
+			<div class="container">
+				<p id="system_topic">ระบบบริการข้อมูลสำนักงานเขตพื้นที่การศึกษา : สถานศึกษาในเขตพื้นที่การศึกษามัธยมศึกษา</p>
+			</div>
+	    </header><br/>
 	
+		 <div class="container">
+			<!--  Index >> add_school_page -->
+			<spring:url value="/" var="home"/>
+			<spring:url value="/school/list_highschool" var="listschool"/>
+		    <a href="${home }">หน้าแรก</a>   >>    <a href="${listschool }">สถานศึกษาในเขตพื้นที่การศึกษามัธยมศึกษา</a> <br /><br />  	     
+    	 </div>    
+	
+		<div class="container">		
+			<p class="line1"></p>
+			<c:forEach items="${district_highschool }" var="dt">
+			<p class="topic_district">เขตพื้นที่การศึกษา : <span>${dt.districtFullName }</span>  :  <span> ${dt.districtName }</span></p>
+			<table class="table table-bordered" id="table_list">
+				<tbody>
+					<tr class="tr_table">
+						<th>รหัสโรงเรียน</th> <th>โรงเรียน</th> <th>ประเภท</th> <th>ผู้บริหาร</th> <th>บุคลากรและครู</th>
+					</tr>
+					<c:forEach items="${dt.schools }" var="school">
+						<tr>
+							<!-- List of HighSchool-->
+							<td>${school.schoolID }</td>	
+							<td>${school.schoolName }</td>									
+							<td>${school.schoolType }</td>	
+							<td>${school.schoolDirector }</td>			
+							<td>${school.teacher_and_employee }</td>							
+						</tr>	
+					</c:forEach>
+				</tbody>
+			</table>
+			</c:forEach> <br />				
+		</div>
+		
+	</div>
 	</section>
-
+	
 <!--  
 <table><tr>
 <td><a href="<c:url value='/edit/${person.id}' />" >Edit</a></td>
