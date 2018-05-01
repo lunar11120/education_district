@@ -15,5 +15,7 @@ public interface DistrictService {
 	List<District> findAll_dsitrictPrimaryschool();
 	
 	District find_by_id(int id); 
+	
+	void deleteDistrict(int id);
 
 }

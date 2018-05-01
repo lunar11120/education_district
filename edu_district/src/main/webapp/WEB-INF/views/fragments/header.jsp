@@ -38,8 +38,11 @@
             			<spring:url value="/school/add" var="addSchool" /> 
             			<li><a href="${addSchool }">เพิ่มสถานศึกษาในสังกัด</a></li>
             			
-            			<spring:url value="/editData" var="editData" /> 
-            			<li><a href="${editData }">แก้ไขข้อมูลในระบบ</a></li>
+            			<spring:url value="/editData_district" var="editData1" /> 
+            			<li><a href="${editData1 }">แก้ไขข้อมูลเขตพื้นที่การศึกษา</a></li>
+            			
+            			<spring:url value="/editData" var="editData2" /> 
+            			<li><a href="${editData2 }">แก้ไขข้อมูลสถานศึกษา</a></li>
           			</ul>
         		
         		</li>

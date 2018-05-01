@@ -1,6 +1,5 @@
 package edu_district.test_application_section1;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.transaction.HeuristicMixedException;
@@ -9,17 +8,13 @@ import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
 import javax.transaction.Transaction;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
-import javax.persistence.Entity;
 
 import com.edu.model.District;
-import com.edu.model.School;
 
 public class DistrictApplication {
 	public static void main(String[] args) throws SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException {
@@ -76,5 +71,7 @@ public class DistrictApplication {
 			System.out.println(dc);
 		}
 	}
+	
+
 
 }

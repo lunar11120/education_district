@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.edu.model.District;
+import com.edu.model.NewsTopic;
 
 @Repository("districtRepository")
 public class DistrictRepositoryImpl implements DistrictRepository {
@@ -44,8 +45,24 @@ public class DistrictRepositoryImpl implements DistrictRepository {
 	}
 	
 	@Transactional
-	public District getByDistrictId(int id) {
-		return em.getReference(District.class, id);
+	public District getByDistrictId(int id) {		
+		District district = new District();
+		district = em.getReference(District.class, id);
+		System.out.println("check district object"+district.toString());
+		return district;		
+		
+	}
+	
+	@Transactional
+	public void deleteDistrict(int id) {		
+		District district = new District();
+		district = em.getReference(District.class, id);
+		em.remove(district);
+		em.close();
+
+		System.out.println("delete district object");
+		return ;		
+		
 	}
 
 	public List<District> load_all_dsitrictHighschool() {

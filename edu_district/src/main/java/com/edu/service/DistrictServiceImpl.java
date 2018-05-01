@@ -37,4 +37,9 @@ public class DistrictServiceImpl implements DistrictService {
 		return districtRepository.load_all_dsitrictPrimaryschool();
 	}
 
+	public void deleteDistrict(int id) {
+		districtRepository.deleteDistrict(id);
+		return ;
+	}
+
 }

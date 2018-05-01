@@ -11,5 +11,6 @@ public interface DistrictRepository {
 	List<District> load_all_dsitrictHighschool();
 	List<District> load_all_dsitrictPrimaryschool();
 	District getByDistrictId(int id); 
+	void deleteDistrict(int id);
 
 }
