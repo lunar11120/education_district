@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>District review</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css"/>
@@ -32,21 +32,31 @@
 	    </header>	
 	
 	<div class="container">
-		<h4>บันทึกข้อมูลเสร็จสิ้น [โรงเรียน :<span>${school.schoolName }</span>]</h4>
+		<h4>บันทึกข้อมูลเสร็จสิ้น [เขตพื้นที่การศึกษา :<span>${district.districtFullName }</span>]</h4>
 	</div>	
 	    
-	<div class="container">
+	<div class="container"><!-- show district review -->
 		
-		<h2>School</h2>
+		<h2>District</h2>
 		<ul class="list-group">
-  			<li class="list-group-item"><label>รหัสโรงเรียน :</label><span>${school.schoolID }</span></li>
-  			<li class="list-group-item"><label>โรงเรียน :</label><span>${school.schoolName }</span></li>
-  			<li class="list-group-item"><label>ปรเภท :</label><span>${school.schoolType }</span></li>
-  			<li class="list-group-item"><label>URL :</label><span>${school.schoolUrl }</span></li>
+  			<li class="list-group-item"><label>อักษรย่อ :</label><span>${district.districtName }</span></li>
+  			<li class="list-group-item"><label>เขตพื้นที่การศึกษา :</label><span>${district.districtFullName }</span></li>
+
+  		    <c:choose>
+			   <c:when test="${district.isDistrictHighschool }">
+			   <li class="list-group-item"><label>ปรเภท :</label>เขตพื้นที่การศึกษามัธยมศึกษา</li>
+			   </c:when> 
+	
+			   <c:otherwise>
+			   <li class="list-group-item"><label>ปรเภท :</label>เขตพื้นที่การศึกษาประถมศึกษา</li>
+			   </c:otherwise>    
+		   </c:choose>
+		
 		</ul>
 		
 	</div>
 	
+
 
 	<div class="container">	
 		<table id="link_review">	
@@ -64,6 +74,7 @@
 		 </td></tr>	        	
 		</table>				
 	</div>	
+
 	
 	</section><!-- End section 1 -->
 		

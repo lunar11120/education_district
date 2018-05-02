@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>ระบบบริการข้อมูลสำนักงานเขตพื้นที่การศึกษา</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css"/>
@@ -20,7 +20,7 @@
 </head>
 <body>
 
-	<jsp:include page="../views/fragments/header.jsp"></jsp:include>
+	<jsp:include page="../views/fragments/header_search.jsp"></jsp:include>
 	
 	<section id="section1"><!-- section 1 -->
 	

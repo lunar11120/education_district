@@ -33,25 +33,32 @@
 			</div>
 		
 			<div class="container">
-				<p id="system_topic">ระบบบริการข้อมูลสำนักงานเขตพื้นที่การศึกษา : เพิ่มสถานศึกษาในสังกัด</p>
+				<p id="system_topic">ระบบบริการข้อมูลสำนักงานเขตพื้นที่การศึกษา : แก้ไขข้อมูลสถานศึกษา</p>
 			</div>
 	    </header>	
 	
 	 <div class="container">
 		<!--  Index >> add_school_page -->
 		<spring:url value="/" var="home"/>
-		<spring:url value="/school/add" var="addschool"/>
-	    <a href="${home }">หน้าแรก</a>   >>    <a href="${addschool }">เพิ่มสถานศึกษาในสังกัด</a> <br /><br />  	     
+		<spring:url value="/editData_Highschool" var="addschool"/>
+	    <a href="${home }">หน้าแรก</a>   >>    <a href="${addschool }">แก้ไขข้อมูลสถานศึกษา</a> <br /><br />  	     
      </div>
     	
 	<div class="container">	
 		<div class="row">
-			<spring:url value="/school/add_primaryschool" var="formUrl"/>
+			<spring:url value="/school/add_highschool" var="formUrl"/>
 			<form:form modelAttribute="school" action="${formUrl }" method="post" cssClass="col-md-8 col-md-offset-2">
 
-				<div class="form-group">
-					<label for="districtType">เขตพื้นที่การศึกษา : เขตพื้นที่การศึกษาประถมศึกษา</label>	
+				<div class="container">
+					<div class="form-group">
+						<label for="unit">เลือกเขตพื้นที่การศึกษา</label> 
+						<ul>
+							<li><form:radiobutton path="districtType" value="True"/>เขตพื้นที่การศึกษามัธยมศึกษา </li>
+							<li><form:radiobutton path="districtType" value="False"/>เขตพื้นที่การศึกษาประถมศึกษา </li>
+						</ul>
+					</div>
 				</div>
+				
 							
 				<div class="form-group">
 					<label for="school-name">โรงเรียน</label>
@@ -65,17 +72,17 @@
 
 				<div class="form-group">
 					<label for="school-type">ประเภท</label>
-					<form:select path="schoolType" cssClass="selectpicker" items="${typeOptions_ps}"></form:select>
+					<form:select path="schoolType" cssClass="selectpicker" items="${typeOptions_hs}"></form:select>
 				</div>
-
+				
 				<div class="form-group">
 					<label for="school-type">เขตพื้นที่การศึกษา</label>				
 					<form:select path="district_id_number">
 					    <form:option value="0" label="เลือกเขตพื้นที่การศึกษา" />
 					    <form:options items="${districtListMap}" cssClass="selectpicker" />
 					</form:select>								
-				</div>				
-				
+				</div>	
+
 				<div class="form-group">
 					<label for="school-director">ผู้บริหาร</label>
 					<form:input id="school-director" cssClass="form-control" path="schoolDirector"/>
@@ -89,13 +96,15 @@
 				<div class="form-group">
 					<label for="school-url">School URL</label>
 					<form:input id="school-url" cssClass="form-control" path="schoolUrl"/>
-				</div>
-			
-				<button type="submit" class="btn btn-default">Submit</button>
+				</div>				
+
+				<form:input type="hidden" id="district-ID" cssClass="form-control" path="id" hidden="true" />		
+					
+				<button type="submit" class="btn btn-default">Submit</button> 
 	
 			</form:form>		
-		</div>
-	</div> <br />
+		</div> <br />
+	</div>
 	
 	</section>
 	

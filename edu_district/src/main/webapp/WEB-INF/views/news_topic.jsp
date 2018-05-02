@@ -20,7 +20,7 @@
 </head>
 <body>
 
-	<jsp:include page="../views/fragments/header.jsp"></jsp:include>
+	<jsp:include page="../views/fragments/header_normal.jsp"></jsp:include>
 	
 	<section id="section1"><!-- section 1 -->
 	

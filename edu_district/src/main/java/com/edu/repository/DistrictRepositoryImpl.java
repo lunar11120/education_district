@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.edu.model.District;
-import com.edu.model.NewsTopic;
 
 @Repository("districtRepository")
 public class DistrictRepositoryImpl implements DistrictRepository {

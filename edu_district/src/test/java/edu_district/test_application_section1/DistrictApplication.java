@@ -53,15 +53,18 @@ public class DistrictApplication {
         cfg.configure("hibernate.cfg.xml");// populates the data of the configuration file
 
         // creating seession factory object
-        SessionFactory factory = cfg.buildSessionFactory();
+        @SuppressWarnings("deprecation")
+		SessionFactory factory = cfg.buildSessionFactory();
 
         // creating session object
         Session session = factory.openSession();		
 
 
 		// Get All Employees
+		@SuppressWarnings("unused")
 		Transaction tx = (Transaction) session.beginTransaction();
 		SQLQuery query = session.createSQLQuery("select did, districtName from District");
+		@SuppressWarnings("unchecked")
 		List<Object[]> rows = query.list();
 		for(Object[] row : rows){
 			District dc = new District();

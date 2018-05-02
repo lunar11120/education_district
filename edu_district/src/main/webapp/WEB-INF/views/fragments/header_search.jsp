@@ -54,6 +54,18 @@
         		<li><a href="http://www.obec.go.th/">กลับหน้าหลัก สพฐ.</a> </li>
         		
     		</ul>
+    		
+    		<div>		
+    			<spring:url value="/search_school" var="search_school" /> 
+			    <form:form modelAttribute="school_search" class="navbar-form navbar-left" action="${search_school }" method="post" >
+			      <div class="form-group">
+			        <form:input type="text" class="form-control" placeholder="ค้นหาสถานศึกษา" path="schoolName" />
+			      </div>
+			      <button type="submit" class="btn btn-default">ค้นหา</button>
+			    </form:form>		
+    		</div>
+
+
 
     		
 		</div>

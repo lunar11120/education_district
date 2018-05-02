@@ -12,25 +12,6 @@ body{
 	background-color:PaleTurquoise ; 
 }
 
-
-
-#section1{
-	width: 1000px;
-	height: 600px;
-	background-color:white;
-	border: 1px solid black;
-	text-align: left;
-	margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto;
-
-}
-#section2_District{
-	width: 1000px;
-	height: 930px;
-	background-color:white;
-	border: 1px solid black;
-	text-align: left;
-	margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto;	
-}
 #section3{
 	width: 1000px;
 	background-color:white;
@@ -39,25 +20,46 @@ body{
 	margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto;
 
 }
-#section3_addschool{
-	width: 1000px;
-	background-color:white;
-	border: 1px solid black;
-	text-align: left;
-	margin-top: 0px; margin-right: auto; margin-bottom: 18px; margin-left: auto;		
-}
 
 #system_topic{
-	font-size: 20px;
-	font-style: normal;
+	font-size: 16px;
 	fonr-color: #0B9E9A;
-	margin-top: 6px;
+	margin-top: 7px;
 }
 
 .container
 {
-	width: 800px;
+	width: 950px;
 
+}
+
+.schooldetail{
+	width: 945px;
+}
+
+.schooldetail_part1{
+	float:left;
+	width: 400px;
+}
+.schooldetail_part2{
+	float:right;
+	width: 520px;
+}
+
+#topicschool{
+	font-size: 24px;
+	font-style: normal;
+
+}
+
+#lable1{
+	font-size: 15px;
+	color:SteelBlue   ;
+}
+
+#span1{
+	font-size: 15px;
+	margin-left: 6px;
 }
 
 .link_system{

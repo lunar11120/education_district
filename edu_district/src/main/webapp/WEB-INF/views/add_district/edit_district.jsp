@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ระบบบริการข้อมูลสำนักงานเขตพื้นที่การศึกษา:เพิ่มเขตพื้นที่การศึกษา</title>
+<title>ระบบบริการข้อมูลสำนักงานเขตพื้นที่การศึกษา:แก้ไขข้อมูลเขตพื้นที่การศึกษา</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css"/>
@@ -37,12 +37,12 @@
 		</div>
 	 </header><br/>
 	    		
-	 <div class="container">
-		<!--  Index >> add_school_page -->
-		<spring:url value="/" var="home"/>
-		<spring:url value="/district/add" var="add_District"/>
-	    <a href="${home }">หน้าแรก</a>   >>    <a href="${add_District }">เพิ่มเขตพื้นที่การศึกษา</a> <br /><br />  	     
-     </div>
+	<div class="container">
+			<!--  Index >> add_school_page -->
+			<spring:url value="/" var="home"/>
+			<spring:url value="/editData_district" var="listschool"/>
+		    <a href="${home }">หน้าแรก</a>   >>    <a href="${listschool }">แก้ไขข้อมูลเขตพื้นที่การศึกษา</a> <br /><br />  	     
+    </div>
     	
 	<div class="container">	
 		<div class="row">

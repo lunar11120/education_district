@@ -11,13 +11,13 @@ import javax.persistence.Transient;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = School.FIND_ALL_Primary_school , query =  "SELECT g FROM School g"),
-	@NamedQuery(name = School.FIND_ALL_School , query = "SELECT g FROM School g"  )	
+	@NamedQuery(name = School.FIND_BY_NAME , query = "SELECT g FROM School g where g.schoolName LIKE CONCAT('%', :school_name, '%')"),
+	@NamedQuery(name = School.FIND_ALL_School , query = "SELECT g FROM School g where g.isActive=True"  )	
 })
 public class School {
 	
 	public static final String FIND_ALL_School = "findAllSchools";
-	public static final String FIND_ALL_Primary_school = "findAllPrimarySchools";	
+	public static final String FIND_BY_NAME = "findAllPrimarySchools";	
 
 	@Id
 	@GeneratedValue	
@@ -28,6 +28,7 @@ public class School {
 	private String schoolDirector;
 	private String schoolUrl;
 	private int teacher_and_employee;
+	private Boolean isActive;
 	
 	@Transient
 	private int district_id_number;
@@ -42,6 +43,16 @@ public class School {
 		
 	public Boolean getDistrictType() {
 		return districtType;
+	}
+
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
 	}
 
 

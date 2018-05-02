@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.edu.model.District;
-
 import com.edu.service.DistrictService;
 
 
@@ -38,7 +38,7 @@ public class DistrictController {
 		education_District_Service.save(district);
 		System.out.println("save completed | district data:"+district.toString());
 		
-		return "home";
+		return "add_district/add_district_review";
 	}
 	
 	//Edit District =====
@@ -62,9 +62,9 @@ public class DistrictController {
 	
 	//Delete District =====
 	@RequestMapping(value="/delete/{did}",method=RequestMethod.GET)
-	public String editDistrict(@PathVariable("did") Integer district_id) {
+	public String editDistrict(@PathVariable("did") Integer district_id,RedirectAttributes attributes) {
 		education_District_Service.deleteDistrict(district_id);
-		return "home";
+		return "redirect:/editData_district";
 	}	
 	
 	
@@ -74,6 +74,15 @@ public class DistrictController {
 				"เขตพื้นที่การศึกษามัธยมศึกษา", "เขตพื้นที่การศึกษาประถามศึกษา"	
 			}));
 	}
+	
+	//District review
+	@RequestMapping(value="/add_district_review" ,method=RequestMethod.POST)
+	public String schoolReviewPage(@ModelAttribute District district){
+	
+		System.out.println("DistrictReviewPage:"+district.toString());
+		
+		return "add_district/add_district_review";
+	}	
 
 	
 }//end class DistrictController

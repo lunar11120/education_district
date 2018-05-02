@@ -25,4 +25,17 @@ public class SchoolServiceImpl implements SchoolService {
 		return schoolRepository.load_all_schoolList();
 	}
 
+	public School findSchoolBy_ID(long id) {
+		return schoolRepository.getBySchoolId(id);
+	}
+
+	public void deleteSchool(long school_id) {
+		schoolRepository.deleteSchool(school_id);
+		
+	}
+
+	public List<School> find_by_Name(String school_name) {
+		return schoolRepository.find_by_Name(school_name);
+	}
+
 }

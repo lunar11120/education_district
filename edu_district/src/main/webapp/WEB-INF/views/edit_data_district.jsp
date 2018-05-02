@@ -38,8 +38,8 @@
 		 <div class="container">
 			<!--  Index >> add_school_page -->
 			<spring:url value="/" var="home"/>
-			<spring:url value="/school/list_highschool" var="listschool"/>
-		    <a href="${home }">หน้าแรก</a>   >>    <a href="${listschool }">สถานศึกษาในเขตพื้นที่การศึกษามัธยมศึกษา</a> <br /><br />  	     
+			<spring:url value="/editData_district" var="listschool"/>
+		    <a href="${home }">หน้าแรก</a>   >>    <a href="${listschool }">แก้ไขข้อมูลเขตพื้นที่การศึกษา</a> <br /><br />  	     
     	 </div>    
 	
 		<div class="container">		
@@ -47,7 +47,8 @@
 
 			<table class="table table-bordered" id="table_list">
 				<tbody>
-					<tr class="tr_table"> <th>Edit</th> <th>Delete</th> <th>เขตพื้นที่การศึกษา</th> <th>สำนักงานเขตพื้นที่การศึกษา</th>  </tr>
+					<tr class="tr_table"> <th>Edit</th> <th>Delete</th> <th>เขตพื้นที่การศึกษา</th> 
+					<th>สำนักงานเขตพื้นที่การศึกษา</th> <th>ประเภท</th> </tr>
 				<c:forEach items="${districtList }" var="dt">		
 							<tr>
 								<spring:url value="/district/edit/${dt.did}" var="district_id"/>
@@ -55,7 +56,18 @@
 								<spring:url value="/district/delete/${dt.did}" var="district_id"/>
 								<td><a href="${district_id }" >Delete</a></td>	
 								<td>${dt.districtName }</td>									
-								<td>${dt.districtFullName }</td>						
+								<td>${dt.districtFullName }</td>
+								<td>
+							    <c:choose>
+								   <c:when test="${dt.isDistrictHighschool }">
+								       เขตพื้นที่การศึกษามัธยมศึกษา
+								   </c:when> 
+						
+								   <c:otherwise>
+								       เขตพื้นที่การศึกษาประถมศึกษา
+								   </c:otherwise>    
+					 			</c:choose>	
+					 	       </td>					
 							</tr>
 				</c:forEach>				
 				</tbody>

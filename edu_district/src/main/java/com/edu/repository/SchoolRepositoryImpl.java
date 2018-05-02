@@ -41,6 +41,35 @@ public class SchoolRepositoryImpl implements SchoolRepository {
 		
 		TypedQuery<School> query = em.createNamedQuery(School.FIND_ALL_School,School.class);	
 		return query.getResultList();
+	}
+	
+	@Transactional
+	public School getBySchoolId(long id) {
+		School school = new School();
+		school = em.getReference(School.class, id);
+		System.out.println("check school object"+school.toString());
+		return school;
+	}
+
+	@Transactional
+	public void deleteSchool(long school_id) {
+		School school = new School();
+		school = em.getReference(School.class, school_id);
+		school.setIsActive(Boolean.FALSE);
+		em.close();
+
+		System.out.println("delete school object");
+		
+	}
+
+	public List<School> find_by_Name(String school_name) {
+		
+		System.out.println("school Repository | Search | find_by_Name [schoolname =]"+school_name);
+		
+		TypedQuery<School> query = em.createNamedQuery(School.FIND_BY_NAME,School.class).setParameter("school_name", school_name);	
+		return query.getResultList();
+		
+
 	}	
 	
 	
