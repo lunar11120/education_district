@@ -21,7 +21,7 @@ My JAVA web application, OBEC.IFEC, is a web-based thailand education district a
 
 The interface will use theme light-green color.it easy to use and good understanding of user.
 
-![app Preview](https://raw.githubusercontent.com/lunar11120/education_district/master/edu_district/raw_data/gh04_eclipse_white.jpg )
+![app Preview](https://raw.githubusercontent.com/lunar11120/education_district/master/edu_district/raw_data/gh02_schoollist.jpg )
 
 ### Code Example
 
@@ -53,7 +53,7 @@ public class DistrictController {
 ```
 I use Eclipse IDE tool for build web application.
 
-![app Preview](https://raw.githubusercontent.com/lunar11120/education_district/master/edu_district/raw_data/gh04_eclipse.jpg )
+![app Preview](https://raw.githubusercontent.com/lunar11120/education_district/master/edu_district/raw_data/gh04_eclipse_white.jpg )
 
 ## Author
 
