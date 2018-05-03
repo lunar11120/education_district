@@ -21,7 +21,7 @@ My JAVA web application, OBEC.IFEC, is a web-based thailand education district a
 
 The interface will use theme light-green color.it easy to use and good understanding of user.
 
-![app Preview](https://raw.githubusercontent.com/lunar11120/education_district/master/edu_district/raw_data/gh02_schoollist.jpg )
+![app Preview](https://raw.githubusercontent.com/lunar11120/education_district/master/edu_district/raw_data/gh04_eclipse_white.jpg )
 
 ### Code Example
 
